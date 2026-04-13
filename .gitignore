@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+.venv/
+venv/
+env/
+.env
+*.env
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Secrets & credentials
+keys/
+*.json
+!package.json
+!package-lock.json
+!model_pipeline/models/model_versions.json
+
+# Trained model artifacts (large binaries)
+model_pipeline/artifacts/models/*.pkl
+model_pipeline/models/production/*.pkl
+*.pkl
+*.joblib
+
+# Data (managed by DVC)
+data/
+*.parquet
+*.csv
+!data_pipeline/data.dvc
+
+# Logs
+*.log
+logs/
+airflow/logs/
+read_log.csv
+
+# Docker volumes & local state
+airflow/
+postgres-data/
+redis-data/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
