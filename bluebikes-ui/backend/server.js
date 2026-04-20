@@ -7,9 +7,10 @@ const corsOptions = {
     'http://localhost:3000',
     'http://localhost:5173',
     'http://34.110.183.151',                    
-    'https://storage.googleapis.com',           
-    /\.run\.app$/,                              
-    /\.googleapis\.com$/                        
+    'https://storage.googleapis.com',
+    'https://gyuszix.github.io',
+    /\.run\.app$/,
+    /\.googleapis\.com$/
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
