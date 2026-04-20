@@ -1,5 +1,7 @@
 # Optimizing Bluebikes Operations with Machine Learning Based Demand Prediction
 
+> This project was originally developed as a team effort. The full collaborative version can be found at [PranavViswanathan/Rebalance-AI](https://github.com/PranavViswanathan/Rebalance-AI).
+
 ![airflow workflow](https://github.com/PranavViswanathan/Optimizing-Bluebikes-Operations-with-Machine-Learning-Based-Demand-Prediction/actions/workflows/airflow_ci.yaml/badge.svg)
 
 
