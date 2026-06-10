@@ -1,0 +1,21 @@
+# Trains the synthetic stand-in model inside python:3.11-slim using the SAME
+# pinned requirements as the serving container, then uploads the pickle to GCS.
+# Run from model_deployment/:
+#   gcloud builds submit --config cloudbuild.train.yaml \
+#       --substitutions=_BUCKET=bluebike-demo-gyuszix-mlruns --project bluebike-demo-gyuszix
+substitutions:
+  _BUCKET: bluebike-demo-gyuszix-mlruns
+  _MODEL_PATH: models/production/current_model.pkl
+steps:
+  - name: python:3.11-slim
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        set -e
+        pip install --no-cache-dir -r requirements.txt
+        python train_synthetic_model.py /workspace/current_model.pkl
+  - name: gcr.io/cloud-builders/gsutil
+    args: ["cp", "/workspace/current_model.pkl", "gs://${_BUCKET}/${_MODEL_PATH}"]
+options:
+  logging: CLOUD_LOGGING_ONLY
